@@ -4,7 +4,6 @@ package com.radhsyn83.themoviedb.ui
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
-import androidx.compose.ui.platform.LocalContext
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer

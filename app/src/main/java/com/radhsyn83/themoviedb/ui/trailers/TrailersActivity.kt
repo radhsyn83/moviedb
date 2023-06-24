@@ -34,7 +34,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.radhsyn83.themoviedb.R
@@ -43,7 +42,6 @@ import com.radhsyn83.themoviedb.ui.YoutubeActivity
 import com.radhsyn83.themoviedb.ui.theme.Error
 import com.radhsyn83.themoviedb.ui.theme.Loading
 import com.radhsyn83.themoviedb.ui.theme.TheMovieDBTheme
-import com.radhsyn83.themoviedb.ui.theme.Typography
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
