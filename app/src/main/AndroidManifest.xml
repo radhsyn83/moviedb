@@ -21,23 +21,11 @@
         android:theme="@style/Theme.TheMovieDb">
 
         <activity
-            android:name=".ui.YoutubeActivity"
+            android:name=".presentation.youtube.YoutubeActivity"
             android:theme="@style/Theme.AppCompat"
             android:exported="false" />
         <activity
-            android:name=".ui.trailers.TrailersActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.reviews.ReviewsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.detail.DetailActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.movies.MoviesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.main.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.TheMovieDb">

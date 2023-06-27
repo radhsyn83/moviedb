@@ -1,9 +1,9 @@
 package com.radhsyn83.themoviedb.di
 
-import com.radhsyn83.themoviedb.data.DataSourcesImpl
-import com.radhsyn83.themoviedb.data.response.RemoteDataSource
-import com.radhsyn83.themoviedb.net.ApiServices
-import com.radhsyn83.themoviedb.net.NetworkInstance
+import com.radhsyn83.themoviedb.common.NetworkInstance
+import com.radhsyn83.themoviedb.data.remote.MovieDBApi
+import com.radhsyn83.themoviedb.data.repository.MovieRepositoryImpl
+import com.radhsyn83.themoviedb.domain.repository.MovieRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,17 +16,13 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideAPI() : ApiServices {
+    fun provideAPINew() : MovieDBApi {
         return NetworkInstance.api()
     }
 
     @Provides
     @Singleton
-    fun provideDataSource(apiServices: ApiServices): RemoteDataSource =
-        RemoteDataSource(apiServices)
-
-    @Provides
-    @Singleton
-    fun provideDataSourceImpl(remoteDataSource: RemoteDataSource): DataSourcesImpl =
-        DataSourcesImpl(remoteDataSource)
+    fun provideMovieRepository(api: MovieDBApi): MovieRepository {
+        return MovieRepositoryImpl(api)
+    }
 }
