@@ -47,7 +47,7 @@ fun DetailScreen(
                         })
                 }
                 item {
-                    Text(text = detail?.overview ?: "", modifier = Modifier.padding(10.dp))
+                    Text(text = detail.overview ?: "", modifier = Modifier.padding(10.dp))
                 }
             }
         }

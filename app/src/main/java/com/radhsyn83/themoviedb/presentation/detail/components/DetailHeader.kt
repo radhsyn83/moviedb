@@ -33,7 +33,7 @@ fun Header(
     onBackClick: () -> Unit,
     onTrailerClick: (Int) -> Unit,
 ) {
-    val backdrop = "${BuildConfig.IMAGE_URL}${detail?.backdropPath}"
+    val backdrop = "${BuildConfig.IMAGE_URL}${detail.backdropPath}"
     Box(
         modifier = Modifier
             .aspectRatio(1.77f)
@@ -42,7 +42,7 @@ fun Header(
         Box(Modifier.fillMaxSize()) {
             GlideImage(
                 model = backdrop,
-                contentDescription = detail?.originalName,
+                contentDescription = detail.originalName,
                 modifier = Modifier
                     .fillMaxSize()
             )

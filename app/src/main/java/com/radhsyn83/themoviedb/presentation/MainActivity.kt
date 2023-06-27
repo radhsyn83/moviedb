@@ -13,6 +13,7 @@ import com.radhsyn83.themoviedb.presentation.genres.GenresScreen
 import com.radhsyn83.themoviedb.presentation.movies.MoviesScreen
 import com.radhsyn83.themoviedb.presentation.reviews.ReviewsScreen
 import com.radhsyn83.themoviedb.presentation.trailers.TrailersScreen
+import com.radhsyn83.themoviedb.presentation.youtube.YoutubeScreen
 import com.radhsyn83.themoviedb.ui.theme.TheMovieDBTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -52,6 +53,11 @@ class MainActivity : ComponentActivity() {
                             route = Screen.TrailersScreen.route + "/{id}"
                         ) {
                             TrailersScreen(navController)
+                        }
+                        composable(
+                            route = Screen.YoutubeScreen.route + "/{id}"
+                        ) {
+                            YoutubeScreen(navController)
                         }
                     }
                 }

@@ -19,11 +19,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TheMovieDb">
-
-        <activity
-            android:name=".presentation.youtube.YoutubeActivity"
-            android:theme="@style/Theme.AppCompat"
-            android:exported="false" />
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true"

@@ -33,7 +33,7 @@ fun DetailContents(
     detail: Detail,
     onReviewsClick: (Int) -> Unit
 ) {
-    val poster = "${BuildConfig.IMAGE_URL}${detail?.posterPath}"
+    val poster = "${BuildConfig.IMAGE_URL}${detail.posterPath}"
     Row(
         Modifier
             .padding(10.dp)
@@ -42,7 +42,7 @@ fun DetailContents(
     ) {
         GlideImage(
             model = poster,
-            contentDescription = detail?.originalName,
+            contentDescription = detail.originalName,
             modifier = Modifier
                 .aspectRatio(0.65f)
                 .fillMaxSize()
@@ -50,7 +50,7 @@ fun DetailContents(
         Column(Modifier.padding(start = 10.dp)) {
             Text(
                 modifier = Modifier.padding(bottom = 10.dp),
-                text = detail?.originalName ?: "",
+                text = detail.originalName ?: "",
                 style = Typography.titleLarge,
                 color = Color.Black
             )
@@ -63,9 +63,9 @@ fun DetailContents(
                         .width(14.dp)
                         .padding(bottom = 4.dp)
                 )
-                Text(text = (detail?.voteAverage ?: 0.0).toString())
+                Text(text = (detail.voteAverage ?: 0.0).toString())
             }
-            Text(text = detail?.status ?: "", modifier = Modifier.padding(vertical = 10.dp))
+            Text(text = detail.status ?: "", modifier = Modifier.padding(vertical = 10.dp))
             OutlinedButton(
                 onClick = {
                     onReviewsClick(detail.id ?: 0)
