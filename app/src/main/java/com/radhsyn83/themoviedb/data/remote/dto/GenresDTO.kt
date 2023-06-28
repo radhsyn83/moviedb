@@ -2,7 +2,6 @@ package com.radhsyn83.themoviedb.data.remote.dto
 
 import com.google.gson.annotations.SerializedName
 import com.radhsyn83.themoviedb.domain.model.Genre
-import com.radhsyn83.themoviedb.domain.model.Page
 
 data class GenresDTO(
     @SerializedName("page")

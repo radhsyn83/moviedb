@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.radhsyn83.themoviedb.common.Resource
 import com.radhsyn83.themoviedb.domain.use_case.GetReviewsUseCase
-import com.radhsyn83.themoviedb.presentation.movies.MoviesState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
