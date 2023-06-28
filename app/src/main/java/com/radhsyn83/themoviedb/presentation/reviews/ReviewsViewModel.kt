@@ -61,6 +61,7 @@ class ReviewsViewModel @Inject constructor(
                     )
                 }
                 is Resource.Loading -> {
+                    if (!isLoadMore)
                     _state.value = ReviewsState(isLoading = true)
                 }
             }
