@@ -23,27 +23,11 @@ class GenresViewModel @Inject constructor(
         getGenres()
     }
 
-     fun getGenres(isLoadMore: Boolean = false) {
+     private fun getGenres() {
         getGenresUseCase().onEach { result ->
             when (result) {
                 is Resource.Success -> {
-                    val totalPages = result.data?.totalPage ?: 0
-                    val gr = result.data?.result ?: emptyList()
-                    var currentPage = _state.value.page
-                    val canLoadMore = totalPages != currentPage
-
-                    if (canLoadMore) currentPage++
-
-                    if (!isLoadMore) {
-                        _state.value = GenresState(
-                            genres = gr,
-                            canLoadMore = canLoadMore,
-                            page = currentPage
-                        )
-                    } else {
-                        val newMovies = _state.value.genres + gr
-                        _state.value = _state.value.copy(genres = newMovies, page = currentPage)
-                    }
+                    _state.value = GenresState(genres = result.data ?: listOf())
                 }
                 is Resource.Error -> {
                     _state.value = GenresState(

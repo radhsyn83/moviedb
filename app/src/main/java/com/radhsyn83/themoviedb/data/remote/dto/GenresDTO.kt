@@ -24,7 +24,7 @@ data class GenresDTO(
     )
 }
 
-fun GenresDTO.toGenres(): Page<List<Genre>> {
+fun GenresDTO.toGenres(): List<Genre> {
     var dt: List<Genre> = emptyList()
     genres.map {
         dt += Genre(
@@ -32,9 +32,5 @@ fun GenresDTO.toGenres(): Page<List<Genre>> {
             name = it.name
         )
     }
-    return Page(
-        totalPage = totalPages ?: 1,
-        page = this.page ?: 1,
-        result = dt
-    )
+    return dt
 }

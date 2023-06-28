@@ -2,6 +2,7 @@ package com.radhsyn83.themoviedb.data.remote.dto
 
 
 import com.google.gson.annotations.SerializedName
+import com.radhsyn83.themoviedb.domain.model.Page
 import com.radhsyn83.themoviedb.domain.model.Review
 
 data class ReviewsDTO(
@@ -32,7 +33,7 @@ data class ReviewsDTO(
     }
 }
 
-fun ReviewsDTO.toReviews(): List<Review> {
+fun ReviewsDTO.toReviews(): Page<List<Review>> {
     var dt: List<Review> = emptyList()
     results.map {
         dt += Review(
@@ -44,5 +45,9 @@ fun ReviewsDTO.toReviews(): List<Review> {
             )
         )
     }
-    return dt
+    return Page(
+        totalPage = totalPages ?: 1,
+        page = this.page ?: 1,
+        result = dt
+    )
 }

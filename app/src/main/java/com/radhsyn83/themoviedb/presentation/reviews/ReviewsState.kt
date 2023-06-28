@@ -5,5 +5,7 @@ import com.radhsyn83.themoviedb.domain.model.Review
 data class ReviewsState(
     val isLoading: Boolean = false,
     val reviews: List<Review> = emptyList(),
-    val error: String = ""
+    val error: String = "",
+    var page: Int = 1,
+    var canLoadMore: Boolean = false
 )

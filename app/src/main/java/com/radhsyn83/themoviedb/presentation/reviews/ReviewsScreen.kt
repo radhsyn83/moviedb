@@ -1,5 +1,6 @@
 package com.radhsyn83.themoviedb.presentation.reviews
 
+import android.util.Log
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -33,6 +34,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.radhsyn83.themoviedb.R
 import com.radhsyn83.themoviedb.presentation.reviews.components.ReviewItems
+import com.radhsyn83.themoviedb.ui.theme.OnBottomReached
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
@@ -76,6 +78,12 @@ fun ReviewsScreen(
                         reviews = movie,
                     )
                 }
+            }
+            if (state.canLoadMore) {
+                listState.OnBottomReached(buffer = 2, loadMore = {
+                    Log.d("Load More", "${state.canLoadMore}")
+                    viewModel.getReviews(isLoadMore = true)
+                })
             }
             if (state.error.isNotBlank()) {
                 Text(

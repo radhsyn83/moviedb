@@ -6,7 +6,5 @@ import com.radhsyn83.themoviedb.domain.model.Genre
 data class GenresState(
     val isLoading: Boolean = false,
     val genres: List<Genre> = emptyList(),
-    val error: String = "",
-    var page: Int = 1,
-    var canLoadMore: Boolean = false
+    val error: String = ""
 )

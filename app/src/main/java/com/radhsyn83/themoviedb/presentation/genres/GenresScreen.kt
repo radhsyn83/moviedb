@@ -64,12 +64,6 @@ fun GenresScreen(
                     )
                 }
             }
-            if (state.canLoadMore) {
-                listState.OnBottomReached(buffer = 2, loadMore = {
-                    Log.d("Load More", "${state.canLoadMore}")
-                    viewModel.getGenres(true)
-                })
-            }
             if (state.error.isNotBlank()) {
                 Text(
                     text = state.error,
